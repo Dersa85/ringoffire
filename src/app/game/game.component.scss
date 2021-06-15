@@ -45,6 +45,13 @@
     right: 0;
 }
 
+.info-card {
+    position: absolute;
+    bottom: 110px;
+    left: 15vw;
+    right: 15vw;
+}
+
 @keyframes pick-card-animation {
     0% {
         transform: scale(1);
