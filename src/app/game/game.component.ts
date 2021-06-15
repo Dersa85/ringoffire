@@ -23,14 +23,15 @@ export class GameComponent implements OnInit {
   }
 
   takeCard() {
-    if (this.pickCardAnimation) {
+    if (this.pickCardAnimation || !this.game.players.length) {
       return;
     }
 
     this.pickCardAnimation = true;
     this.currentCard = this.game.stack.pop()!;
     
-    
+    this.changeToNextPlayer();
+
     setTimeout(() => {
       this.game.playedCards.push(this.currentCard);
       setTimeout(() => {
@@ -39,11 +40,17 @@ export class GameComponent implements OnInit {
     }, 1100);
   }
 
+  changeToNextPlayer() {
+    this.game.currentPlayer = (this.game.currentPlayer + 1) % this.game.players.length
+  }
+
   openDialog() {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe((name:string) => {
-      this.game.players.push(name);
+      if (name) {
+        this.game.players.push(name);
+      }
     })
   }
 }
