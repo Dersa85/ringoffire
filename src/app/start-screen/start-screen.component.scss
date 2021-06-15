@@ -1,0 +1,25 @@
+.start-screen {
+    background-color: #404040;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../assets/img/start-screen.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    div {
+        display: flex;
+        button {
+            font-size: x-large;
+            border-radius: 10%;
+            border-color: white;
+            background-color: brown;
+            color: white;
+            &:hover {
+                filter: brightness(1.3);
+                cursor: pointer;
+            }
+        }
+    }
+}
