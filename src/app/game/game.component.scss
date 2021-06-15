@@ -16,6 +16,12 @@
     }
 }
 
+.btn-add {
+    position: absolute;
+    right: 64px;
+    bottom: 64px;
+}
+
 .top-card {
     cursor: pointer;
     transition: 125ms all ease-in-out;
