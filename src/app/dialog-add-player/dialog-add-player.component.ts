@@ -16,11 +16,11 @@ export class DialogAddPlayerComponent implements OnInit {
   }
 
   closeDialog() {
-    this.dialogRef.close('Pizza!');
+    //this.dialogRef.close('Pizza!');
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    //this.dialogRef.close();
   }
 
 }
