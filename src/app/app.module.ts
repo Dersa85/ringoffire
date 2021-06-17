@@ -15,16 +15,18 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { MatCardModule } from '@angular/material/card';
+import { DialogBackToMenuComponent } from './dialog-back-to-menu/dialog-back-to-menu.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     StartScreenComponent,
     GameComponent,
     PlayerComponent,
     DialogAddPlayerComponent,
-    GameInfoComponent
-  ],
+    GameInfoComponent,
+      DialogBackToMenuComponent
+   ],
   imports: [
     BrowserModule,
     AppRoutingModule,

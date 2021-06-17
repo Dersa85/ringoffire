@@ -1,7 +1,7 @@
 
 
 .player {
-    width: 300px;
+    width: calc(150px + 10vw);
     display: flex;
     align-items: center;
     background-color: rgba(134, 130, 128, 0.9);
@@ -9,13 +9,13 @@
     border-bottom-left-radius: 50px;
 
     span {
-        font-size: 32px;
+        font-size: min(32px, 6vw);
         margin-left: 16px;
     }
 
     img {
-        height: 70px;
-        width: 70px;
+        height: clamp(45px, 10vw, 85px);
+        width: clamp(45px, 10vw, 85px);
         object-fit: cover;
         border-radius: 100%;
     }

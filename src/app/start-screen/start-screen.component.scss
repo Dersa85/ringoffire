@@ -11,10 +11,14 @@
     div {
         display: flex;
         button {
-            font-size: x-large;
-            border-radius: 10%;
-            border-color: white;
-            background-color: brown;
+            font-size: 48px;
+            padding: 32px 56px;
+            border: transparent 0;
+            background-color: transparent;
+            background-image: url('../../assets/img/new-game-label.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: -22px;
             color: white;
             &:hover {
                 filter: brightness(1.3);

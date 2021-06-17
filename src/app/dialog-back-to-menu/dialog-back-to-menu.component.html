@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Back to menu</h1>
+<div mat-dialog-content>
+  <p>Want you cancel the current game and go back to menu?</p>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="endingGame" cdkFocusInitial>Ok</button>
+</div>

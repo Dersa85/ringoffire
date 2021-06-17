@@ -11,14 +11,14 @@
   <div>
 
     <!-- Card stack -->
-    <img *ngFor="let card of [1, 2, 3, 4, 5]; let i = index;" [ngStyle]="{'right.px': (1+i) * 4}" src="assets/img/cards/card_cover.png">
-    <img (click)="takeCard()" class="top-card" style="right: 25px;" src="assets/img/cards/card_cover.png">
+    <img *ngFor="let card of game.stack; let i = index;" [ngStyle]="{'right.px': i / 5 * 2, 'top.px': -i / 5}" src="assets/img/cards/card_cover.png">
+    <img *ngIf="game.stack.length" (click)="takeCard()" class="top-card" [ngStyle]="{'right.px': (game.stack.length) / 5 * 2, 'top.px': -(game.stack.length)/5}" src="assets/img/cards/card_cover.png">
     
     <!-- Stack for played card -->
-    <img *ngFor="let card of game.playedCards" class="played-card" src="assets/img/cards/{{ card }}.png">
+    <img *ngFor="let card of game.playedCards; let i = index" class="played-card" [ngStyle]="{'right.px': i, 'top.px': -i / 5}" src="assets/img/cards/{{ card }}.png">
     
     <!-- Current card (animation) -->
-    <img *ngIf="pickCardAnimation" (click)="takeCard()"  class="pick-card" style="right: 25px;" src="assets/img/cards/{{ currentCard }}.png">
+    <img *ngIf="pickCardAnimation" (click)="takeCard()"  class="pick-card" [ngStyle]="{'right.px': (game.stack.length) / 5 * 2}" src="assets/img/cards/{{ currentCard }}.png">
   
   </div>
 </div>
@@ -27,4 +27,7 @@
 
 <button mat-fab color='primary' (click)="openDialog()" class="btn-add">
   <mat-icon>add</mat-icon>
+</button>
+<button mat-fab color='Basic' (click)="cancelGame()" class="btn-end">
+  <mat-icon>keyboard_return</mat-icon>
 </button>
