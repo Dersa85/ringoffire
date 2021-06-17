@@ -1,6 +1,10 @@
 <div class="player" [class.player-active]="playerActive">
+  
 
-  <img src="assets/img/blank-profile-picture.png" >
+  <img (click)="playerQuit.emit()" class="close-icon" src="assets/img/close.png">
+  
+  <img src='{{ profilePath }}' >
+  
 
   <span>{{ name }}</span>
 </div>

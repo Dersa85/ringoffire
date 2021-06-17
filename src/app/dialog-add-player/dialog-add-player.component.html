@@ -3,10 +3,22 @@
   <p>Please enter the name of a player</p>
   <mat-form-field>
     <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="name">
+    <input maxlength="12" matInput [(ngModel)]="playerInfo.name">
   </mat-form-field>
 </div>
+
+<div class="profile-container">
+
+  <img class="profile"
+  *ngFor="let path of allPictures"
+  [class.selected]="path == playerInfo.picturePath"
+  src='{{path}}'
+  (click)="selectProfile(path)"
+  >
+
+</div>
+
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button [disabled]="name.length == 0" [mat-dialog-close]="name" cdkFocusInitial>Ok</button>
+  <button mat-button [disabled]="playerInfo.name.length == 0" [mat-dialog-close]="playerInfo" cdkFocusInitial>Ok</button>
 </div>

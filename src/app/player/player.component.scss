@@ -1,15 +1,16 @@
 
 
 .player {
-    width: calc(150px + 10vw);
+    width: calc(150px + 11vw);
     display: flex;
     align-items: center;
-    background-color: rgba(134, 130, 128, 0.9);
+    background-color: rgba(80, 80, 80, 0.7);
     border-top-left-radius: 50px;
     border-bottom-left-radius: 50px;
+    z-index: 1;
 
     span {
-        font-size: min(32px, 6vw);
+        font-size: min(24px, 6vw);
         margin-left: 16px;
     }
 
@@ -23,4 +24,14 @@
 
 .player-active {
     background-color: orangered;
+}
+
+.close-icon {
+    position: absolute;
+    opacity: 0;
+    transition: 125ms opacity ease-in-out;
+
+    &:hover {
+        opacity: 1;
+    }
 }

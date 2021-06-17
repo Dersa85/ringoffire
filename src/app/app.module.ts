@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { GameInfoComponent } from './game-info/game-info.component';
 import { MatCardModule } from '@angular/material/card';
 import { DialogBackToMenuComponent } from './dialog-back-to-menu/dialog-back-to-menu.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [	
@@ -36,7 +38,8 @@ import { DialogBackToMenuComponent } from './dialog-back-to-menu/dialog-back-to-
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    MatCardModule
+    MatCardModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

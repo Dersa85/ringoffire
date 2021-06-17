@@ -8,7 +8,19 @@ import {MatDialogRef} from '@angular/material/dialog';
 })
 export class DialogAddPlayerComponent implements OnInit {
 
-  name:string = '';
+  playerInfo: any = {
+    name: '',
+    picturePath: 'assets/img/profile/male.png'
+  }
+
+  allPictures: string[] = [
+    'assets/img/profile/male.png',
+    'assets/img/profile/female.png',
+    'assets/img/profile/bunny.png',
+    'assets/img/profile/elephant.png',
+    'assets/img/profile/giraffe.png',
+    'assets/img/profile/kitten-2.png'
+  ]
 
   constructor(
     private dialogRef: MatDialogRef<DialogAddPlayerComponent>
@@ -17,6 +29,11 @@ export class DialogAddPlayerComponent implements OnInit {
   ngOnInit() {
   }
 
+  selectProfile(path: string) : void {
+    this.playerInfo.picturePath = path
+    console.log(this.playerInfo);
+    
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

@@ -12,9 +12,19 @@
         right: 10px;
         img {
             position: absolute;
-            width: 120px;
+            width: clamp(100px, 17vw , 140px);
         }
     }
+}
+
+.game-over-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 2;
 }
 
 .btn-add {
@@ -27,11 +37,12 @@
     position: absolute;
     right: 48px;
     bottom: 48px;
+    z-index: 99;
 }
 
 .top-card {
     cursor: pointer;
-    transition: 125ms all ease-in-out;
+    transition: 125ms transform ease-in-out;
 
     &:hover {
         transform: scale(1.05) translateY(-12px);
@@ -43,12 +54,22 @@
 }
 
 .played-card {
-    transform: translateX(0) translateY(-250px) rotate(15deg);
+    transform: translateX(0) translateY(-350px) rotate(15deg);
 }
 
 .player-position {
-    position: absolute;
+    position: relative;
     right: 0;
+}
+
+.player-container {
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    right: 0;
+    top: 0;
+    bottom: 30vh;
+    z-index: 1;
 }
 
 .info-card {
@@ -69,6 +90,6 @@
         transform: scale(1.7);
     }
     100% {
-        transform: scale(1.1) translateX(0) translateY(-240px) rotate(15deg);
+        transform: scale(1.1) translateX(0) translateY(-340px) rotate(15deg);
     }
 }
