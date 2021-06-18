@@ -13,6 +13,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class GameComponent implements OnInit {
 
+  shakeCard: boolean = false;
   game!: Game;
   SOUND_DRAW: HTMLAudioElement = new Audio('assets/sound/draw-card.mp3');
   SOUND_OPEN_DIALOG: HTMLAudioElement = new Audio('assets/sound/open-dialog.mp3');
@@ -71,7 +72,14 @@ export class GameComponent implements OnInit {
    * Draw the next card and switch to the next player
    */
   takeCard(): void {
-    if (this.game.pickCardAnimation || !this.game.players.length) {
+    if (this.game.pickCardAnimation)  {
+      return;
+    }
+    if (!this.game.players.length) {
+      this.shakeCard = true;
+      setTimeout(() => {
+        this.shakeCard = false;
+      }, 300);
       return;
     }
 
